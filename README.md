@@ -1,7 +1,5 @@
 # A prometheus client library written in PHP
 
-[![CircleCI](https://circleci.com/gh/endclothing/prometheus_client_php/tree/master.svg?style=shield)](https://circleci.com/gh/endclothing/prometheus_client_php/tree/master)
-
 This library uses Redis or APCu to do the client side aggregation.
 If using Redis, we recommend to run a local Redis instance next to your PHP workers.
 
@@ -17,7 +15,7 @@ While the first needs a separate binary running, the second just needs the [APC]
 Add as [Composer](https://getcomposer.org/) dependency:
 
 ```sh
-composer require endclothing/prometheus_client_php
+composer require caikeal/prometheus_client_php
 ```
 
 ## Usage
@@ -99,8 +97,7 @@ Also look at the [examples](examples).
 
 ### Dependencies
 
-* PHP ^7.3
-* PHP Redis extension
+* PHP ^7.1
 * PHP APCu extension
 * [Composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
 * Redis
@@ -117,17 +114,4 @@ composer install
 # when Redis is not listening on localhost:
 # export REDIS_HOST=192.168.59.100
 ./vendor/bin/phpunit
-```
-
-## Black box testing
-
-Just start the nginx, fpm & Redis setup with docker-compose:
-```
-docker-compose up
-```
-Pick the adapter you want to test.
-
-```
-docker-compose run phpunit env ADAPTER=apc vendor/bin/phpunit tests/Test/
-docker-compose run phpunit env ADAPTER=redis vendor/bin/phpunit tests/Test/
 ```
