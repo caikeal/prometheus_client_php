@@ -67,18 +67,6 @@ echo $result;
 ```
 
 Change the Redis options (the example shows the defaults):
-```php
-\Prometheus\Storage\Redis::setDefaultOptions(
-    [
-        'host' => '127.0.0.1',
-        'port' => 6379,
-        'password' => null,
-        'timeout' => 0.1, // in seconds
-        'read_timeout' => '10', // in seconds
-        'persistent_connections' => false
-    ]
-);
-```
 
 Using the InMemory storage:
 ```php
